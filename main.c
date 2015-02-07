@@ -1,5 +1,6 @@
 /*
  * main.c
+ * Programma che illustra l'uso del sensore di temperatura nella tiva C
  */
 
 #include <stdarg.h>
