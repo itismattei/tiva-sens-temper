@@ -1,6 +1,2 @@
 syntax: glob
 Debug*
-.se*
-.p*
-.laun*
-.c*
