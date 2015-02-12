@@ -66,14 +66,14 @@ main(void){
     	//HWREG(ui32Base + ADC_O_PSSI) |= ((ui32SequenceNum & 0xffff0000) |
         //(1 << (ui32SequenceNum & 0xf)));
     	/// avvia la conversione del sequencer3
-    	HWREG(ADC0_BASE + ADC_O_ISC) = 1 << 3;
+    	HWREG(ADC0_BASE + ADC_O_PSSI) = (1 << 3);
         //ADCProcessorTrigger(ADC0_BASE, 3);
 
     	//ui32Temp = (HWREG(ui32Base + ADC_O_RIS) &
         //(0x10000 | (1 << ui32SequenceNum)));
         while(!ADCIntStatus(ADC0_BASE, 3, false));
         /// resetta l'interruzione del sequencer 3
-        HWREG(ADC0_BASE + ADC_O_ISC) = 1 << 3;
+        HWREG(ADC0_BASE + ADC_O_ISC) = (1 << 3);
         //ADCIntClear(ADC0_BASE, 3);
        /* while(!(HWREG(ui32Base + ADC_SSFSTAT) & ADC_SSFSTAT0_EMPTY) &&
               (ui32Count < 8))
